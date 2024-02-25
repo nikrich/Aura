@@ -4,6 +4,7 @@
 #include "Player/AuraPlayerController.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "Interaction/EnemyInterface.h"
 
 /**
  * Constructor for the AuraPlayerController class.
@@ -12,6 +13,13 @@
 AAuraPlayerController::AAuraPlayerController()
 {
 	bReplicates = true;
+}
+
+void AAuraPlayerController::PlayerTick(float DeltaTime)
+{
+	Super::PlayerTick(DeltaTime);
+
+	CursorTrace();
 }
 
 /**
@@ -69,5 +77,54 @@ void AAuraPlayerController::Move(const FInputActionValue& InputActionValue)
 	if (APawn* ControlledPawn = GetPawn<APawn>()) {
 		ControlledPawn->AddMovementInput(ForwardDirection, MoveValue.Y);
 		ControlledPawn->AddMovementInput(RightDirection, MoveValue.X);
+	}
+}
+
+void AAuraPlayerController::CursorTrace()
+{
+	FHitResult HitResult;
+	GetHitResultUnderCursor(ECC_Visibility, false, HitResult);
+
+	if (!HitResult.bBlockingHit) {
+		return;
+	}
+
+	LastActor = ThisActor;
+	ThisActor = Cast<IEnemyInterface>(HitResult.GetActor());
+
+	/**
+	* Line trace from custor to actor
+	* A. LastActor is null && ThisActor is null
+	*  - Do Nothing
+	* B. LastActor is null && ThisActor is not null
+	*  - Highlight ThisActor
+	* C. LastActor is not null && ThisActor is null
+	*  - Unhighlight LastActor
+	* D. LastActor is not null && ThisActor is not null
+	*  - Unhighlight LastActor
+	*  - Highlight ThisActor
+	*/
+
+	// Case A
+	if (LastActor == nullptr && ThisActor == nullptr) {
+		return;
+	}
+
+	// Case B
+	if (LastActor == nullptr && ThisActor != nullptr) {
+		ThisActor->HighlightActor();
+		return;
+	}
+
+	// Case C
+	if (LastActor != nullptr && ThisActor == nullptr) {
+		LastActor->UnhighlightActor();
+		return;
+	}
+
+	// Case D
+	if (LastActor != ThisActor) {
+		LastActor->UnhighlightActor();
+		ThisActor->HighlightActor();
 	}
 }
