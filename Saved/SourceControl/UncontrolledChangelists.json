@@ -13,7 +13,10 @@
 				"D:/Game dev/Unreal/Aura/Content/Blueprints/Game/BP_AuraGameMode.uasset",
 				"D:/Game dev/Unreal/Aura/Content/Blueprints/Actor/BP_HealthPotion.uasset",
 				"D:/Game dev/Unreal/Aura/Content/Blueprints/UI/ProgressBar/WBP_GlobeProgressbar.uasset",
-				"D:/Game dev/Unreal/Aura/Content/Assets/UI/Globes/MI_HealthGlobe.uasset"
+				"D:/Game dev/Unreal/Aura/Content/Assets/UI/Globes/MI_HealthGlobe.uasset",
+				"D:/Game dev/Unreal/Aura/Content/Blueprints/UI/ProgressBar/WBP_HealthGlobe.uasset",
+				"D:/Game dev/Unreal/Aura/Content/Blueprints/UI/Overlay/WBP_Overlay.uasset",
+				"D:/Game dev/Unreal/Aura/Content/Blueprints/UI/ProgressBar/WBP_ManaGlobe.uasset"
 			]
 		}
 	]
