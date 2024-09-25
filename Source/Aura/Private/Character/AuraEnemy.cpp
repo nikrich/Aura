@@ -2,6 +2,8 @@
 
 
 #include "Character/AuraEnemy.h"
+#include <AbilitySystem/AuraAbilitySystemComponent.h>
+#include <AbilitySystem/AuraAttributeSet.h>
 
 
 
@@ -10,6 +12,11 @@ AAuraEnemy::AAuraEnemy()
 	PrimaryActorTick.bCanEverTick = true;
 	GetMesh()->CustomDepthStencilValue = 250;
 	Weapon->CustomDepthStencilValue = 250;
+
+	AbilitySystemComponent = CreateDefaultSubobject<UAuraAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+	AbilitySystemComponent->SetIsReplicated(true);
+
+	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>(TEXT("AttributeSet"));
 }
 
 void AAuraEnemy::HighlightActor()
