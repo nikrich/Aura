@@ -10,7 +10,8 @@
 				"D:/Game dev/Unreal/Aura/Content/Blueprints/Character/Goblin_Slingshot/BP_Goblin_Slingshot.uasset",
 				"D:/Game dev/Unreal/Aura/Content/Blueprints/Character/BP_EnemyBase.uasset",
 				"D:/Game dev/Unreal/Aura/Content/Blueprints/Player/BP_AuraPlayerState.uasset",
-				"D:/Game dev/Unreal/Aura/Content/Blueprints/Game/BP_AuraGameMode.uasset"
+				"D:/Game dev/Unreal/Aura/Content/Blueprints/Game/BP_AuraGameMode.uasset",
+				"D:/Game dev/Unreal/Aura/Content/Blueprints/Actor/BP_HealthPotion.uasset"
 			]
 		}
 	]
