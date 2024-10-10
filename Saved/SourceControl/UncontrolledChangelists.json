@@ -16,7 +16,8 @@
 				"D:/Game dev/Unreal/Aura/Content/Assets/UI/Globes/MI_HealthGlobe.uasset",
 				"D:/Game dev/Unreal/Aura/Content/Blueprints/UI/ProgressBar/WBP_HealthGlobe.uasset",
 				"D:/Game dev/Unreal/Aura/Content/Blueprints/UI/Overlay/WBP_Overlay.uasset",
-				"D:/Game dev/Unreal/Aura/Content/Blueprints/UI/ProgressBar/WBP_ManaGlobe.uasset"
+				"D:/Game dev/Unreal/Aura/Content/Blueprints/UI/ProgressBar/WBP_ManaGlobe.uasset",
+				"D:/Game dev/Unreal/Aura/Content/Blueprints/UI/HUD/BP_AuraHUD.uasset"
 			]
 		}
 	]
